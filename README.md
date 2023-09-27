@@ -43,7 +43,7 @@ which covers 8 tasks and 10 test sets. Our contributions are presented in these 
 
 [The MentaLLaMA Paper](https://arxiv.org/abs/2309.13567) | [The Evaluation Paper](https://arxiv.org/abs/2304.03347)
 
-**Ethical considerations**
+**Ethical Considerations**
 
 This repository and its contents are provided for **non-clinical research only**
 . None of the material constitutes actual diagnosis or advice, and help-seeker should get assistance
@@ -71,9 +71,34 @@ mental health monitoring systems.
 
 **By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
 
-**MentaLLaMA checkpoints:** 
+**MentaLLaMA Checkpoints:** 
 
 - [MentaLLaMA-chat-13B](https://huggingface.co/klyang/MentaLLaMA-chat-13B)
 - [MentaLLaMA-chat-7B](https://huggingface.co/klyang/MentaLLaMA-chat-7B)
 - [MentalBART](https://huggingface.co/Tianlin668/MentalBART)
 - [MentalT5](https://huggingface.co/Tianlin668/MentalT5)
+
+**Close-source LLM Evaluation**
+
+**IMHI Dataset**
+
+**MentaLLaMA Model**
+
+## Citation
+
+If you use MentaLLaMA in your work, please cite our paper.
+
+```
+@misc{yang2023mentalllama,
+      title={MentalLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models}, 
+      author={Kailai Yang and Tianlin Zhang and Ziyan Kuang and Qianqian Xie and Sophia Ananiadou},
+      year={2023},
+      eprint={2309.13567},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+## License
+
+MentaLLaMA is licensed under [MIT]. Please find more details in the [MIT](LICENSE) file.
