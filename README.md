@@ -76,3 +76,10 @@ are still many challenges in applying the model to real-scenario
 mental health monitoring systems.
 
 **By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
+
+**MentaLLaMA checkpoints:** 
+
+- [MentaLLaMA-chat-13B](https://huggingface.co/klyang/MentaLLaMA-chat-13B)
+- [MentaLLaMA-chat-7B](https://huggingface.co/klyang/MentaLLaMA-chat-7B)
+- [MentalBART](https://huggingface.co/Tianlin668/MentalBART)
+- [MentalT5](https://huggingface.co/Tianlin668/MentalT5)
