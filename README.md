@@ -1,11 +1,5 @@
 # MentaLLaMA
 
-
-<p align="center" width="100%">
-<img src="https://i.postimg.cc/nc2Jy6FN/uom.png"  width="100%" height="100%">
-</p>
-
-
 <div>
 <div align="left">
     <a href='https://stevekgyang.github.io/' target='_blank'>Kailai Yang<sup>1,2</sup>&emsp;
