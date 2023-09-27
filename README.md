@@ -20,6 +20,7 @@
 </div>
 
 <div align="left">
+    <img src='https://i.postimg.cc/Kj7RzvNr/nactem-hires.png' alt='NaCTeM' height='100px'>&emsp;
     <img src='https://i.postimg.cc/nc2Jy6FN/uom.png' alt='UoM University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/cJD3HsRY/helsinki.jpg' alt='helsinki Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/T3tjyqGp/Jiangxi.png' alt='helsinki Logo' height='100px'>
