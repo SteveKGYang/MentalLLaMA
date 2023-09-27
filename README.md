@@ -47,4 +47,32 @@ analysis on social media data and generate high-quality explanations for its pre
 We also introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples,
 which covers 8 tasks and 10 test sets. Our contributions are presented in these 2 papers:
 
-[The evaluation Paper](https://arxiv.org/abs/2304.03347) | [The MentaLLaMA paper](https://arxiv.org/abs/2309.13567)
+[The MentaLLaMA Paper](https://arxiv.org/abs/2309.13567) | [The Evaluation Paper](https://arxiv.org/abs/2304.03347)
+
+**Ethical considerations**
+
+This repository and its contents are provided for **non-clinical research only**
+. None of the material constitutes actual diagnosis or advice, and help-seeker should get assistance
+from professional psychiatrists or clinical practitioners. No warranties, express or implied, are offered regarding the accuracy
+, completeness, or utility of the predictions and explanations. The authors and contributors are not
+responsible for any errors, omissions, or any consequences arising from the use 
+of the information herein. Users should exercise their own judgment and consult
+professionals before making any clinical-related decisions. The use
+of the software and information contained in this repository is entirely at the 
+user's own risk.
+
+The raw datasets collected to build our IMHI dataset are from public
+social media platforms such as Reddit and Twitter, and we strictly
+follow the privacy protocols and ethical principles to protect
+user privacy and guarantee that anonymity is properly applied in
+all the mental health-related texts. In addition, to minimize misuse,
+all examples provided in our paper are paraphrased and obfuscated
+utilizing the moderate disguising scheme.
+
+In addition, recent studies have indicated LLMs may introduce some potential
+bias, such as gender gaps. Meanwhile, some incorrect prediction results, inappropriate explanations, and over-generalization
+also illustrate the potential risks of current LLMs. Therefore, there
+are still many challenges in applying the model to real-scenario
+mental health monitoring systems.
+
+**By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
