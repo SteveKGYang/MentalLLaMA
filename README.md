@@ -131,7 +131,7 @@ We release our human annotations on AI-generated explanations to facilitate futu
 tools for interpretable mental health analysis, because current state-of-the-art method, BART-score, only has a moderate
 correlation with human preferences.
 
-##The IMHI Benchmark
+## The IMHI Benchmark
 
 ## Citation
 
