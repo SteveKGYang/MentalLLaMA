@@ -125,9 +125,13 @@ Our running of these codes gets the following response:
 Answer: This post shows the stress cause related to work. Reasoning: The post explicitly mentions work as being stressful and expresses a hope that it gets better. This indicates that the poster is experiencing stress in relation to their work, suggesting that work is the primary cause of their stress in this instance.
 ```
 
-**Close-source LLM Evaluation**
+**Human Annotations**
 
-**IMHI Dataset**
+We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
+tools for interpretable mental health analysis, because current state-of-the-art method, BART-score, only has a moderate
+correlation with human preferences.
+
+**The IMHI Benchmark**
 
 ## Citation
 
