@@ -1,4 +1,6 @@
-# MentaLLaMA
+<p align="center" width="100%">
+<img src="https://i.postimg.cc/0Nd8VxbL/logo.png"  width="100%" height="100%">
+</p>
 
 <div>
 <div align="left">
