@@ -31,21 +31,6 @@
 
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
-**Introduction**
-
-This project presents our efforts towards interpretable mental health analysis
-with large language models (LLMs). We comprehensively evaluate the zero-shot/few-shot 
-performances of the latest LLMs such as ChatGPT and GPT-4 on generating explanations
-for mental health analysis. We build the Interpretable Mental Health Instruction (IMHI)
-dataset with 105K samples, the first multi-task and multisource instruction-tuning dataset for interpretable mental
-health analysis on social media. Based on the IMHI dataset, We propose MentalLLaMA, the first open-source instructionfollowing large language model for interpretable mental
-health analysis. MentalLLaMA can perform mental health
-analysis on social media data and generate high-quality explanations for its predictions.
-We also introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples,
-which covers 8 tasks and 10 test sets. Our contributions are presented in these 2 papers:
-
-[The MentaLLaMA Paper](https://arxiv.org/abs/2309.13567) | [The Evaluation Paper](https://arxiv.org/abs/2304.03347)
-
 **Ethical Considerations**
 
 This repository and its contents are provided for **non-clinical research only**
@@ -74,18 +59,67 @@ mental health monitoring systems.
 
 **By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
 
-**MentaLLaMA Checkpoints:** 
+**Introduction**
 
-- [MentaLLaMA-chat-13B](https://huggingface.co/klyang/MentaLLaMA-chat-13B)
-- [MentaLLaMA-chat-7B](https://huggingface.co/klyang/MentaLLaMA-chat-7B)
-- [MentalBART](https://huggingface.co/Tianlin668/MentalBART)
-- [MentalT5](https://huggingface.co/Tianlin668/MentalT5)
+This project presents our efforts towards interpretable mental health analysis
+with large language models (LLMs). In early works we comprehensively evaluate the zero-shot/few-shot 
+performances of the latest LLMs such as ChatGPT and GPT-4 on generating explanations
+for mental health analysis. Based on the findings, we build the Interpretable Mental Health Instruction (IMHI)
+dataset with 105K instruction samples, the first multi-task and multisource instruction-tuning dataset for interpretable mental
+health analysis on social media. Based on the IMHI dataset, We propose MentalLLaMA, the first open-source instruction-following LLMs for interpretable mental
+health analysis. MentalLLaMA can perform mental health
+analysis on social media data and generate high-quality explanations for its predictions.
+We also introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples,
+which covers 8 tasks and 10 test sets. Our contributions are presented in these 2 papers:
+
+[The MentaLLaMA Paper](https://arxiv.org/abs/2309.13567) | [The Evaluation Paper](https://arxiv.org/abs/2304.03347)
+
+**MentaLLaMA Model** 
+
+We provide 4 model checkpoints evaluated in the MentaLLaMA paper:
+
+- [MentaLLaMA-chat-13B](https://huggingface.co/klyang/MentaLLaMA-chat-13B): This model is fine-tuned based on the Meta 
+LLaMA2-chat-13B foundation model and the full IMHI instruction tuning data. The training
+data covers 8 mental health analysis tasks. The model can follow instructions to make accurate mental health analysis
+and generate high-quality explanations for the predictions. Due to the model size, the inference
+are relatively slow.
+- [MentaLLaMA-chat-7B](https://huggingface.co/klyang/MentaLLaMA-chat-7B): This model is fine-tuned based on the Meta 
+LLaMA2-chat-7B foundation model and the full IMHI instruction tuning data. The training
+data covers 8 mental health analysis tasks. The model can follow instructions to make mental health analysis
+and generate explanations for the predictions.
+- [MentalBART](https://huggingface.co/Tianlin668/MentalBART): This model is fine-tuned based on the BART-large foundation model
+and the full IMHI-completion data. The training data covers 8 mental health analysis tasks. The model cannot
+follow instructions, but can make mental health analysis and generate explanations in a completion-based manner.
+- [MentalT5](https://huggingface.co/Tianlin668/MentalT5): This model is fine-tuned based on the T5-large foundation model
+and the full IMHI-completion data. The model cannot
+follow instructions, but can make mental health analysis and generate explanations in a completion-based manner.
+
+You can use the MentaLLaMA models in your Python project with the Hugging Face Transformers library. 
+Here is a simple example of how to load the model:
+
+```python
+from transformers import LlamaTokenizer, LlamaForCausalLM
+tokenizer = LlamaTokenizer.from_pretrained(MODEL_PATH)
+model = LlamaForCausalLM.from_pretrained(MODEL_PATH, device_map='auto')
+```
+
+In this example, LlamaTokenizer is used to load the tokenizer, and LlamaForCausalLM is used to load the model. The `device_map='auto'` argument is used to automatically
+use the GPU if it's available. `MODEL_PATH` denotes your model save path.
+
+After loading the models, you can generate a response. Here is an example:
+
+```python
+prompt = 'Consider this post: ""how the coronavirus could damage the US economy"" Question: What is the stress cause of this post?'
+inputs = tokenizer(prompt, return_tensors="pt")
+
+# Generate
+generate_ids = model.generate(inputs.input_ids, max_length=2048)
+tokenizer.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
+```
 
 **Close-source LLM Evaluation**
 
 **IMHI Dataset**
-
-**MentaLLaMA Model**
 
 ## Citation
 
