@@ -144,11 +144,13 @@ test data for interpretable mental health analysis. Statistic about the 10 test 
 | [IRF](https://aclanthology.org/2023.findings-acl.757/)                                                                                   | Interpersonal risks factors detection | 2,113        | Reddit      | Human annotations |
 
 We currently release the test data from the following sets: DR, dreaddit, SAD, MultiWD, and IRF. The instruction
-data is put under 
-
+data is put under
 ```
 /test_data/test_instruction
 ```
+The items are easy to follow: the `query` row denotes the question, and the `gpt-3.5-turbo` row 
+denotes our modified and evaluated predictions and explanations from ChatGPT. `gpt-3.5-turbo` is used as
+the golden response for evaluation.
 
 ## Human Annotations
 
@@ -158,6 +160,7 @@ automatic evaluation metrics on correlation with human preferences. The results 
 [evaluation paper](https://arxiv.org/abs/2304.03347) show that the scores by 
 [BART-score](https://github.com/neulab/BARTScore) are moderately correlated with human annotations.
 
+### Quality Evaluation
 In our [evaluation paper](https://arxiv.org/abs/2304.03347), we manually labeled a subset of the AIGC results for the DR dataset in 4 aspects:
 fluency, completeness, reliability, and overall. The annotations are released in this dir:
 ```
@@ -167,6 +170,17 @@ where we labeled 163 ChatGPT-generated explanations for the depression detection
 includes 121 explanations that correctly classified by ChatGPT. `chatgpt_false_data.csv`
 includes 42 explanations that falsely classified by ChatGPT. We also include 121 explanations that correctly 
 classified by InstructionGPT-3 in `gpt3_data.csv`.
+
+### Expert-written Golden Explanations
+In our [MentaLLaMA paper](https://arxiv.org/abs/2309.13567), we invited one domain expert major in quantitative psychology
+to write an explanation for 350 selected posts (35 posts for each raw dataset). The golden set is used to accurately
+evaluate the explanation-generation ability of LLMs in an automatic manner. To facilitate future research, we
+release the expert-written explanations for the following datasets: DR, dreaddit, SWMH, T-SID, SAD, CAMS, 
+loneliness, MultiWD, and IRF (35 samples each). The data is released in this dir:
+```
+/test_data/expert_examples
+```
+
 
 ## Citation
 
