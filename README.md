@@ -143,6 +143,13 @@ test data for interpretable mental health analysis. Statistic about the 10 test 
 | [MultiWD](https://github.com/drmuskangarg/MultiWD) | Wellness dimensions detection         | 2,441        | Reddit      | Human annotations |
 | [IRF](https://aclanthology.org/2023.findings-acl.757/)                                                                                   | Interpersonal risks factors detection | 2,113        | Reddit      | Human annotations |
 
+We currently release the test data from the following sets: DR, dreaddit, SAD, MultiWD, and IRF. The instruction
+data is put under 
+
+```
+/test_data/test_instruction
+```
+
 ## Human Annotations
 
 We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
