@@ -109,7 +109,7 @@ use the GPU if it's available. `MODEL_PATH` denotes your model save path.
 After loading the models, you can generate a response. Here is an example:
 
 ```python
-prompt = 'Consider this post: ""how the coronavirus could damage the US economy"" Question: What is the stress cause of this post?'
+prompt = 'Consider this post: "work, it has been a stressful week! hope it gets better." Question: What is the stress cause of this post?'
 inputs = tokenizer(prompt, return_tensors="pt")
 
 # Generate
