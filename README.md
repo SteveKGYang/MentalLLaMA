@@ -90,9 +90,11 @@ and generate explanations for the predictions.
 - [MentalBART](https://huggingface.co/Tianlin668/MentalBART): This model is fine-tuned based on the BART-large foundation model
 and the full IMHI-completion data. The training data covers 8 mental health analysis tasks. The model cannot
 follow instructions, but can make mental health analysis and generate explanations in a completion-based manner.
+The smaller size of this model allows faster inference and easier deployment.
 - [MentalT5](https://huggingface.co/Tianlin668/MentalT5): This model is fine-tuned based on the T5-large foundation model
 and the full IMHI-completion data. The model cannot
 follow instructions, but can make mental health analysis and generate explanations in a completion-based manner.
+The smaller size of this model allows faster inference and easier deployment.
 
 You can use the MentaLLaMA models in your Python project with the Hugging Face Transformers library. 
 Here is a simple example of how to load the model:
