@@ -128,8 +128,20 @@ Answer: This post shows the stress cause related to work. Reasoning: The post ex
 ## Human Annotations
 
 We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
-tools for interpretable mental health analysis, because current state-of-the-art method, BART-score, only has a moderate
-correlation with human preferences.
+tools for interpretable mental health analysis. Based on these human evaluation results, we tested various existing
+automatic evaluation metrics on correlation with human preferences. The results in our 
+[evaluation paper](https://arxiv.org/abs/2304.03347) show that the scores by 
+[BART-score](https://github.com/neulab/BARTScore) are moderately correlated with human annotations.
+
+In our [evaluation paper](https://arxiv.org/abs/2304.03347), we manually labeled a subset of the AIGC results for the DR dataset in 4 aspects:
+fluency, completeness, reliability, and overall. The annotations are released in this dir:
+```
+/human_evaluation/DR_annotation
+```
+where we labeled 163 ChatGPT-generated explanations for the depression detection dataset DR. The file `chatgpt_data.csv`
+includes 121 explanations that correctly classified by ChatGPT. `chatgpt_false_data.csv`
+includes 42 explanations that falsely classified by ChatGPT. We also include 121 explanations that correctly 
+classified by InstructionGPT-3 in `gpt3_data.csv`.
 
 ## The IMHI Benchmark
 
