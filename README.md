@@ -57,7 +57,7 @@ also illustrate the potential risks of current LLMs. Therefore, there
 are still many challenges in applying the model to real-scenario
 mental health monitoring systems.
 
-**By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
+*By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.*
 
 **Introduction**
 
