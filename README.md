@@ -180,7 +180,8 @@ loneliness, MultiWD, and IRF (35 samples each). The data is released in this dir
 ```
 /test_data/expert_examples
 ```
-
+In each file, the `Post` row denotes the examined post, the `Expert_Response` row denotes the expert-written
+predictions and explanations. In `Irf.csv` and `MultiWD.csv`, the `Aspect` row denotes the examined aspect/wellness dimension.
 
 ## Citation
 
