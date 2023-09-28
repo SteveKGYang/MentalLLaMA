@@ -125,6 +125,24 @@ Our running of these codes gets the following response:
 Answer: This post shows the stress cause related to work. Reasoning: The post explicitly mentions work as being stressful and expresses a hope that it gets better. This indicates that the poster is experiencing stress in relation to their work, suggesting that work is the primary cause of their stress in this instance.
 ```
 
+## The IMHI Benchmark
+We introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples
+. We collect raw test data from 10 existing datasets covering 8 mental health analysis tasks, and transfer them into
+test data for interpretable mental health analysis. Statistic about the 10 test sets are as follows:
+
+| Data                                                                                                                        | Task                                  | Test samples | Data Source | Annotation        |
+|-----------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------|-------------|-------------------|
+| [DR](https://aclanthology.org/W18-5903/)                                                                                    | depression detection                  | 405          | Reddit      | Weak labels       |
+| [CLP](https://aclanthology.org/W15-1204/)                                                                                   | depression detection                  | 299          | Reddit      | Human annotations |
+| [dreaddit](https://aclanthology.org/D19-6213/)                                                                              | stress detection                      | 414          | Reddit      | Human annotations |
+| [SWMH](https://arxiv.org/abs/2004.07601)                                                                                    | mental disorders detection            | 10,882       | Reddit      | Weak labels       |
+| [T-SID](https://arxiv.org/abs/2004.07601)                                                                                   | mental disorders detection            | 959          | Twitter     | Weak labels       |
+| [SAD](https://dl.acm.org/doi/10.1145/3411763.3451799)                                                                       | stress cause detection                | 684          | SMS         | Human annotations |
+| [CAMS](https://aclanthology.org/2022.lrec-1.686/)                                                                           | depression/suicide cause detection    | 625          | Reddit      | Human annotations |
+| loneliness                                                                                                                  | loneliness detection                  | 531          | Reddit      | Human annotations |
+| [MultiWD](https://github.com/drmuskangarg/MultiWD) | Wellness dimensions detection         | 2,441        | Reddit      | Human annotations |
+| [IRF](https://aclanthology.org/2023.findings-acl.757/)                                                                                   | Interpersonal risks factors detection | 2,113        | Reddit      | Human annotations |
+
 ## Human Annotations
 
 We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
@@ -142,8 +160,6 @@ where we labeled 163 ChatGPT-generated explanations for the depression detection
 includes 121 explanations that correctly classified by ChatGPT. `chatgpt_false_data.csv`
 includes 42 explanations that falsely classified by ChatGPT. We also include 121 explanations that correctly 
 classified by InstructionGPT-3 in `gpt3_data.csv`.
-
-## The IMHI Benchmark
 
 ## Citation
 
