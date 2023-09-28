@@ -31,7 +31,7 @@
 
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
-**Ethical Considerations**
+##Ethical Considerations
 
 This repository and its contents are provided for **non-clinical research only**
 . None of the material constitutes actual diagnosis or advice, and help-seeker should get assistance
@@ -59,7 +59,7 @@ mental health monitoring systems.
 
 *By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.*
 
-**Introduction**
+##Introduction
 
 This project presents our efforts towards interpretable mental health analysis
 with large language models (LLMs). In early works we comprehensively evaluate the zero-shot/few-shot 
@@ -74,7 +74,7 @@ which covers 8 tasks and 10 test sets. Our contributions are presented in these 
 
 [The MentaLLaMA Paper](https://arxiv.org/abs/2309.13567) | [The Evaluation Paper](https://arxiv.org/abs/2304.03347)
 
-**MentaLLaMA Model** 
+##MentaLLaMA Model 
 
 We provide 4 model checkpoints evaluated in the MentaLLaMA paper:
 
@@ -125,13 +125,13 @@ Our running of these codes gets the following response:
 Answer: This post shows the stress cause related to work. Reasoning: The post explicitly mentions work as being stressful and expresses a hope that it gets better. This indicates that the poster is experiencing stress in relation to their work, suggesting that work is the primary cause of their stress in this instance.
 ```
 
-**Human Annotations**
+##Human Annotations
 
 We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
 tools for interpretable mental health analysis, because current state-of-the-art method, BART-score, only has a moderate
 correlation with human preferences.
 
-**The IMHI Benchmark**
+##The IMHI Benchmark
 
 ## Citation
 
