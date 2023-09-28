@@ -117,6 +117,12 @@ generate_ids = model.generate(inputs.input_ids, max_length=2048)
 tokenizer.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
+Our running of these codes gets the following response:
+
+```
+Answer: This post shows the stress cause related to work. Reasoning: The post explicitly mentions work as being stressful and expresses a hope that it gets better. This indicates that the poster is experiencing stress in relation to their work, suggesting that work is the primary cause of their stress in this instance.
+```
+
 **Close-source LLM Evaluation**
 
 **IMHI Dataset**
