@@ -153,11 +153,11 @@ def BARTscore(gen_dir_name, device):
                 open('../quality_evaluation_results/bart_score_{}.pkl'.format(gen_dir_name), 'wb+'))
     return score_results
 
-def main(gen_dir_name: str, cuda: bool, device: str, score_mathod: str):
+def main(gen_dir_name: str, cuda: bool, device: str, score_method: str):
     if not os.path.exists("../quality_evaluation_results/"):
         os.mkdir("../quality_evaluation_results/")
 
-    if score_mathod == 'bart_score':
+    if score_method == 'bart_score':
         BARTscore(gen_dir_name, device)
 
 
