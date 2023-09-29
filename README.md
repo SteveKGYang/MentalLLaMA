@@ -214,24 +214,28 @@ You can obtain the labels as follows: ...
 ### Explanation Quality Evaluation
 The second evaluation metric for the IMHI benchmark is to evaluate the quality of the generated explanations.
 The results in our 
-[evaluation paper](https://arxiv.org/abs/2304.03347) show that [BART-score](https://github.com/neulab/BARTScore) is
+[evaluation paper](https://arxiv.org/abs/2304.03347) show that [BART-score](https://arxiv.org/abs/2106.11520) is
 moderately correlated with human annotations in 4 human evaluation aspects, and outperforms other automatic evaluation metrics. Therefore,
 we utilize BART-score to evaluate the quality of the generated explanations. Specifically, you should first
 generate responses using the `IMHI.py` script and obtain the response dir as in `examples/response_generation_examples`.
+Firstly, download the [BART-score](https://github.com/neulab/BARTScore) directory and put it under `/src`, then
+download the [BART-score checkpoint](https://drive.google.com/file/d/1_7JfF7KOInb7ZrxKHIigTMR4ChVET01m/view?usp=sharing).
 Then score your responses with BART-score using the following commands:
 ```
 cd src
-
+python score.py --gen_dir_name DIR_NAME --score_method bart_score --cuda
 ```
-
+We also provide other scoring methods. You can change `--score_method` to 'GPT3_score', 'bert_score', 'bleu', 'rouge'
+to use these metrics. For [GPT-score](https://github.com/jinlanfu/GPTScore), you need to first download
+the project and put it under `/src`.
 
 ## Human Annotations
 
 We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
 tools for interpretable mental health analysis. Based on these human evaluation results, we tested various existing
 automatic evaluation metrics on correlation with human preferences. The results in our 
-[evaluation paper](https://arxiv.org/abs/2304.03347) show that the scores by 
-[BART-score](https://github.com/neulab/BARTScore) are moderately correlated with human annotations.
+[evaluation paper](https://arxiv.org/abs/2304.03347) show that 
+BART-score is moderately correlated with human annotations in all 4 aspects.
 
 ### Quality Evaluation
 In our [evaluation paper](https://arxiv.org/abs/2304.03347), we manually labeled a subset of the AIGC results for the DR dataset in 4 aspects:
