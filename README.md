@@ -172,7 +172,11 @@ cd src
 python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT_PATH --test_dataset IMHI --llama --cuda
 ```
 `MODEL_PATH` and `OUTPUT_PATH` denote the model save path and the save path for generated responses. 
-All generated responses will be put under `../model_output`. You can also evaluate with the IMHI-completion
+All generated responses will be put under `../model_output`. Some generated examples are shown in
+```
+./examples/response_generation_examples
+```
+You can also evaluate with the IMHI-completion
 test set with the following commands:
 ```
 cd src
@@ -182,8 +186,30 @@ You can also load models that are not based on LLaMA by removing the `--llama` a
 In the generated examples, the `goldens` row denotes the reference explanations and the `generated_text`
 row denotes the generated responses from your model.
 
-### Classification Evaluation
+### Correctness Evaluation
+The first evaluation metric for our IMHI benchmark is to evaluate the classification correctness of the model
+generations. If your model can generate very regular responses, a rule-based classifier can do well to assign
+a label to each response. We provide a rule-based classifier in `IMHI.py` and you can use it during the response
+generation process by adding the argument: `--rule_calculate` to your command. The classifier requires
+the following template:
 
+```
+[label] Reasoning: [explanation]
+```
+
+However, as most LLMs are trained to generate diverse responses, a rule-based label classifier is impractical.
+For example, MentaLLaMA can have the following response for an SAD query:
+```
+This post indicates that the poster's sister has tested positive for ovarian cancer and that the family is devastated. This suggests that the cause of stress in this situation is health issues, specifically the sister's diagnosis of ovarian cancer. The post does not mention any other potential stress causes, making health issues the most appropriate label in this case.
+```
+To solve this problem, in our [MentaLLaMA paper](https://arxiv.org/abs/2309.13567) we train 10 neural 
+network classifiers based on MentalBERT, one for each collected raw dataset. The classifiers are trained to
+assign a classification label given the explanation. We release these 10 classifiers to facilitate future
+evaluations on IMHI benchmark.
+
+The models can be downloaded as follows: ...
+
+You can obtain the labels as follows: ...
 
 ## Human Annotations
 
