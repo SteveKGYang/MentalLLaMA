@@ -255,7 +255,7 @@ def calculate_f1(generated, goldens, output_path):
 def main(model_path: str, model_output_path: str, batch_size: int, test_dataset: str, rule_calculate: bool, llama: bool, device: str, cuda: bool):
     if llama:
         model = LlamaForCausalLM.from_pretrained(model_path)
-        tokenizer = LlamaTokenizer.from_pretrained(model_path)
+        tokenizer = LlamaTokenizer.from_pretrained(model_path, padding_side='left')
     else:
         model = AutoModel.from_pretrained(model_path)
         tokenizer = AutoTokenizer.from_pretrained(model_path)
