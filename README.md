@@ -162,14 +162,28 @@ IMHI-completion. The data is put under
 The file layouts are the same with instruction tuning data. 
 
 ## Model Evaluation
+
+### Response Generation
 To evaluate your trained model on the IMHI benchmark, first load your model and generate responses for all
 test items. We use the Hugging Face Transformers library to load the model. For LLaMA-based models, you can
 generate the responses with the following commands:
 ```
 cd src
-python IMHI.py --model_path MODEL_PATH --batch_size 4 --model_output_path OUTPUT_PATH --test_dataset IMHI --llama --cuda
+python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT_PATH --test_dataset IMHI --llama --cuda
 ```
-The generated responses will be put under `../model_output`.
+`MODEL_PATH` and `OUTPUT_PATH` denote the model save path and the save path for generated responses. 
+All generated responses will be put under `../model_output`. You can also evaluate with the IMHI-completion
+test set with the following commands:
+```
+cd src
+python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT_PATH --test_dataset IMHI-completion --llama --cuda
+```
+You can also load models that are not based on LLaMA by removing the `--llama` argument.
+In the generated examples, the `goldens` row denotes the reference explanations and the `generated_text`
+row denotes the generated responses from your model.
+
+### Classification Evaluation
+
 
 ## Human Annotations
 
