@@ -65,7 +65,7 @@ This project presents our efforts towards interpretable mental health analysis
 with large language models (LLMs). In early works we comprehensively evaluate the zero-shot/few-shot 
 performances of the latest LLMs such as ChatGPT and GPT-4 on generating explanations
 for mental health analysis. Based on the findings, we build the Interpretable Mental Health Instruction (IMHI)
-dataset with 105K instruction samples, the first multi-task and multisource instruction-tuning dataset for interpretable mental
+dataset with 105K instruction samples, the first multi-task and multi-source instruction-tuning dataset for interpretable mental
 health analysis on social media. Based on the IMHI dataset, We propose MentalLLaMA, the first open-source instruction-following LLMs for interpretable mental
 health analysis. MentalLLaMA can perform mental health
 analysis on social media data and generate high-quality explanations for its predictions.
@@ -212,6 +212,17 @@ The models can be downloaded as follows: ...
 You can obtain the labels as follows: ...
 
 ### Explanation Quality Evaluation
+The second evaluation metric for the IMHI benchmark is to evaluate the quality of the generated explanations.
+The results in our 
+[evaluation paper](https://arxiv.org/abs/2304.03347) show that [BART-score](https://github.com/neulab/BARTScore) is
+moderately correlated with human annotations in 4 human evaluation aspects, and outperforms other automatic evaluation metrics. Therefore,
+we utilize BART-score to evaluate the quality of the generated explanations. Specifically, you should first
+generate responses using the `IMHI.py` script and obtain the response dir as in `examples/response_generation_examples`.
+Then score your responses with BART-score using the following commands:
+```
+cd src
+
+```
 
 
 ## Human Annotations
