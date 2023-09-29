@@ -126,22 +126,24 @@ Answer: This post shows the stress cause related to work. Reasoning: The post ex
 ```
 
 ## The IMHI Benchmark
+
+### Test data
 We introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples
 . We collect raw test data from 10 existing datasets covering 8 mental health analysis tasks, and transfer them into
 test data for interpretable mental health analysis. Statistic about the 10 test sets are as follows:
 
-| Data                                                                                                                        | Task                                  | Test samples | Data Source | Annotation        |
-|-----------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------|-------------|-------------------|
-| [DR](https://aclanthology.org/W18-5903/)                                                                                    | depression detection                  | 405          | Reddit      | Weak labels       |
-| [CLP](https://aclanthology.org/W15-1204/)                                                                                   | depression detection                  | 299          | Reddit      | Human annotations |
-| [dreaddit](https://aclanthology.org/D19-6213/)                                                                              | stress detection                      | 414          | Reddit      | Human annotations |
-| [SWMH](https://arxiv.org/abs/2004.07601)                                                                                    | mental disorders detection            | 10,882       | Reddit      | Weak labels       |
-| [T-SID](https://arxiv.org/abs/2004.07601)                                                                                   | mental disorders detection            | 959          | Twitter     | Weak labels       |
-| [SAD](https://dl.acm.org/doi/10.1145/3411763.3451799)                                                                       | stress cause detection                | 684          | SMS         | Human annotations |
-| [CAMS](https://aclanthology.org/2022.lrec-1.686/)                                                                           | depression/suicide cause detection    | 625          | Reddit      | Human annotations |
-| loneliness                                                                                                                  | loneliness detection                  | 531          | Reddit      | Human annotations |
-| [MultiWD](https://github.com/drmuskangarg/MultiWD) | Wellness dimensions detection         | 2,441        | Reddit      | Human annotations |
-| [IRF](https://aclanthology.org/2023.findings-acl.757/)                                                                                   | Interpersonal risks factors detection | 2,113        | Reddit      | Human annotations |
+| Name                                                   | Task                                  | Test samples | Data Source | Annotation        |
+|--------------------------------------------------------|---------------------------------------|--------------|-------------|-------------------|
+| [DR](https://aclanthology.org/W18-5903/)               | depression detection                  | 405          | Reddit      | Weak labels       |
+| [CLP](https://aclanthology.org/W15-1204/)              | depression detection                  | 299          | Reddit      | Human annotations |
+| [dreaddit](https://aclanthology.org/D19-6213/)         | stress detection                      | 414          | Reddit      | Human annotations |
+| [SWMH](https://arxiv.org/abs/2004.07601)               | mental disorders detection            | 10,882       | Reddit      | Weak labels       |
+| [T-SID](https://arxiv.org/abs/2004.07601)              | mental disorders detection            | 959          | Twitter     | Weak labels       |
+| [SAD](https://dl.acm.org/doi/10.1145/3411763.3451799)  | stress cause detection                | 684          | SMS         | Human annotations |
+| [CAMS](https://aclanthology.org/2022.lrec-1.686/)      | depression/suicide cause detection    | 625          | Reddit      | Human annotations |
+| loneliness                                             | loneliness detection                  | 531          | Reddit      | Human annotations |
+| [MultiWD](https://github.com/drmuskangarg/MultiWD)     | Wellness dimensions detection         | 2,441        | Reddit      | Human annotations |
+| [IRF](https://aclanthology.org/2023.findings-acl.757/) | Interpersonal risks factors detection | 2,113        | Reddit      | Human annotations |
 
 We currently release the test data from the following sets: DR, dreaddit, SAD, MultiWD, and IRF. The instruction
 data is put under
@@ -151,6 +153,23 @@ data is put under
 The items are easy to follow: the `query` row denotes the question, and the `gpt-3.5-turbo` row 
 denotes our modified and evaluated predictions and explanations from ChatGPT. `gpt-3.5-turbo` is used as
 the golden response for evaluation.
+
+To facilitate test on models with no instruction following ability, we also release part of the test data for 
+IMHI-completion. The data is put under
+```
+/test_data/test_complete
+```
+The file layouts are the same with instruction tuning data. 
+
+## Model Evaluation
+To evaluate your trained model on the IMHI benchmark, first load your model and generate responses for all
+test items. We use the Hugging Face Transformers library to load the model. For LLaMA-based models, you can
+generate the responses with the following commands:
+```
+cd src
+python IMHI.py --model_path MODEL_PATH --batch_size 4 --model_output_path OUTPUT_PATH --test_dataset IMHI --llama --cuda
+```
+The generated responses will be put under `../model_output`.
 
 ## Human Annotations
 
@@ -178,10 +197,10 @@ evaluate the explanation-generation ability of LLMs in an automatic manner. To f
 release the expert-written explanations for the following datasets: DR, dreaddit, SWMH, T-SID, SAD, CAMS, 
 loneliness, MultiWD, and IRF (35 samples each). The data is released in this dir:
 ```
-/test_data/expert_examples
+/test_data/test_instruction_expert
 ```
-In each file, the `Post` row denotes the examined post, the `Expert_Response` row denotes the expert-written
-predictions and explanations. In `Irf.csv` and `MultiWD.csv`, the `Aspect` row denotes the examined aspect/wellness dimension.
+The expert-written explanations are processed to follow the same format as other test datasets to facilitate
+model evaluations.
 
 ## Citation
 
