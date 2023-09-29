@@ -203,7 +203,7 @@ For example, MentaLLaMA can have the following response for an SAD query:
 This post indicates that the poster's sister has tested positive for ovarian cancer and that the family is devastated. This suggests that the cause of stress in this situation is health issues, specifically the sister's diagnosis of ovarian cancer. The post does not mention any other potential stress causes, making health issues the most appropriate label in this case.
 ```
 To solve this problem, in our [MentaLLaMA paper](https://arxiv.org/abs/2309.13567) we train 10 neural 
-network classifiers based on MentalBERT, one for each collected raw dataset. The classifiers are trained to
+network classifiers based on [MentalBERT](https://arxiv.org/abs/2110.15621), one for each collected raw dataset. The classifiers are trained to
 assign a classification label given the explanation. We release these 10 classifiers to facilitate future
 evaluations on IMHI benchmark.
 
