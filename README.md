@@ -211,6 +211,9 @@ The models can be downloaded as follows: ...
 
 You can obtain the labels as follows: ...
 
+### Explanation Quality Evaluation
+
+
 ## Human Annotations
 
 We release our human annotations on AI-generated explanations to facilitate future research on aligning automatic evaluation
@@ -240,7 +243,13 @@ loneliness, MultiWD, and IRF (35 samples each). The data is released in this dir
 /test_data/test_instruction_expert
 ```
 The expert-written explanations are processed to follow the same format as other test datasets to facilitate
-model evaluations.
+model evaluations. You can test your model on the expert-written golden explanations with similar commands
+as in response generation. For example, you can test LLaMA-based models as follows:
+```
+cd src
+python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT_PATH --test_dataset expert --llama --cuda
+```
+
 
 ## Citation
 
