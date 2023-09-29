@@ -225,6 +225,7 @@ Then score your responses with BART-score using the following commands:
 cd src
 python score.py --gen_dir_name DIR_NAME --score_method bart_score --cuda
 ```
+`DIR_NAME` denotes the dir name of your geenrated responses and should be put under `../model_output`. 
 We also provide other scoring methods. You can change `--score_method` to 'GPT3_score', 'bert_score', 'bleu', 'rouge'
 to use these metrics. For [GPT-score](https://github.com/jinlanfu/GPTScore), you need to first download
 the project and put it under `/src`.
