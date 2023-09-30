@@ -209,9 +209,13 @@ evaluations on IMHI benchmark.
 
 The models can be downloaded as follows: [CAMS](https://huggingface.co/Tianlin668/CAMS), [CLP](https://huggingface.co/Tianlin668/CLP), [DR](https://huggingface.co/Tianlin668/DR),
 [dreaddit](https://huggingface.co/Tianlin668/dreaddit), [Irf](https://huggingface.co/Tianlin668/Irf), [loneliness](https://huggingface.co/Tianlin668/loneliness), [MultiWD](https://huggingface.co/Tianlin668/MultiWD),
-[SAD](https://huggingface.co/Tianlin668/SAD), [swmh](https://huggingface.co/Tianlin668/swmh), [t-sid](https://huggingface.co/Tianlin668/t-sid),
+[SAD](https://huggingface.co/Tianlin668/SAD), [swmh](https://huggingface.co/Tianlin668/swmh), [t-sid](https://huggingface.co/Tianlin668/t-sid)
 
-You can obtain the labels as follows: ...
+You can obtain the labels as follows:
+```
+cd src
+python dataset_inference.py --model_path MODEL_PATH --input_csv INPUT_CSV --batch_size 8 --model_output_path OUTPUT_PATH --cuda --dataset_name DATASET(for exampls:CAMS)
+```
 
 ### Explanation Quality Evaluation
 The second evaluation metric for the IMHI benchmark is to evaluate the quality of the generated explanations.
