@@ -207,7 +207,9 @@ network classifiers based on [MentalBERT](https://arxiv.org/abs/2110.15621), one
 assign a classification label given the explanation. We release these 10 classifiers to facilitate future
 evaluations on IMHI benchmark.
 
-The models can be downloaded as follows: ...
+The models can be downloaded as follows: [CAMS](https://huggingface.co/Tianlin668/CAMS), [CLP](https://huggingface.co/Tianlin668/CLP), [DR](https://huggingface.co/Tianlin668/DR),
+[dreaddit](https://huggingface.co/Tianlin668/dreaddit), [Irf](https://huggingface.co/Tianlin668/Irf), [loneliness](https://huggingface.co/Tianlin668/loneliness), [MultiWD](https://huggingface.co/Tianlin668/MultiWD),
+[SAD](https://huggingface.co/Tianlin668/SAD), [swmh](https://huggingface.co/Tianlin668/swmh), [t-sid](https://huggingface.co/Tianlin668/t-sid),
 
 You can obtain the labels as follows: ...
 
