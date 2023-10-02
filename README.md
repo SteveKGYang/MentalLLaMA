@@ -207,15 +207,23 @@ network classifiers based on [MentalBERT](https://arxiv.org/abs/2110.15621), one
 assign a classification label given the explanation. We release these 10 classifiers to facilitate future
 evaluations on IMHI benchmark.
 
-The models can be downloaded as follows: [CAMS](https://huggingface.co/Tianlin668/CAMS), [CLP](https://huggingface.co/Tianlin668/CLP), [DR](https://huggingface.co/Tianlin668/DR),
+All trained models achieve over 95% accuracy on the IMHI test data. Before you assign the labels, make sure 
+you have transferred your output files in the format of `/exmaples/response_generation_examples` and named
+as `DATASET.csv`. Put all the output files you want to label under the same DATA_PATH dir. Then download 
+the corresponding classifier models from the following links:
+
+The models download links: [CAMS](https://huggingface.co/Tianlin668/CAMS), [CLP](https://huggingface.co/Tianlin668/CLP), [DR](https://huggingface.co/Tianlin668/DR),
 [dreaddit](https://huggingface.co/Tianlin668/dreaddit), [Irf](https://huggingface.co/Tianlin668/Irf), [loneliness](https://huggingface.co/Tianlin668/loneliness), [MultiWD](https://huggingface.co/Tianlin668/MultiWD),
 [SAD](https://huggingface.co/Tianlin668/SAD), [swmh](https://huggingface.co/Tianlin668/swmh), [t-sid](https://huggingface.co/Tianlin668/t-sid)
 
-You can obtain the labels as follows:
+Put all downloaded models under a MODEL_PATH dir and name each model with its dataset. For example, the model
+for DR dataset should be put under `/MODEL_PATH/DR`. Now you can obtain the labels using these models with the following commands:
 ```
 cd src
-python dataset_inference.py --model_path MODEL_PATH --input_csv INPUT_CSV --batch_size 8 --model_output_path OUTPUT_PATH --cuda --dataset_name DATASET(for exampls:CAMS)
+python label_inference.py --model_path MODEL_PATH --data_path DATA_PATH --data_output_path OUTPUT_PATH --cuda
 ```
+where `MODEL_PATH`, `DATA_PATH` denote your specified model and data dirs, and `OUTPUT_PATH` denotes your
+output path. After processing, the output files should have the format as the examples in `/examples/label_data_examples`.
 
 ### Explanation Quality Evaluation
 The second evaluation metric for the IMHI benchmark is to evaluate the quality of the generated explanations.
