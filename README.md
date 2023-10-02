@@ -271,7 +271,7 @@ evaluate the explanation-generation ability of LLMs in an automatic manner. To f
 release the expert-written explanations for the following datasets: DR, dreaddit, SWMH, T-SID, SAD, CAMS, 
 loneliness, MultiWD, and IRF (35 samples each). The data is released in this dir:
 ```
-/test_data/test_instruction_expert
+/human_evaluation/test_instruction_expert
 ```
 The expert-written explanations are processed to follow the same format as other test datasets to facilitate
 model evaluations. You can test your model on the expert-written golden explanations with similar commands

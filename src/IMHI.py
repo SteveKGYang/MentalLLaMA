@@ -30,7 +30,7 @@ def load_complete_test_data():
 
 def load_expert_data():
     test_data = {}
-    for root, ds, fs in os.walk("../test_data/test_instruction_expert"):
+    for root, ds, fs in os.walk("../human_evaluation/test_instruction_expert"):
         for fn in fs:
             data = pd.read_csv(os.path.join(root, fn))
             texts = data['query'].to_list()
