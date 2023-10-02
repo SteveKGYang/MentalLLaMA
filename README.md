@@ -224,7 +224,8 @@ python label_inference.py --model_path MODEL_PATH --data_path DATA_PATH --data_o
 ```
 where `MODEL_PATH`, `DATA_PATH` denote your specified model and data dirs, and `OUTPUT_PATH` denotes your
 output path. After processing, the output files should have the format as the examples in `/examples/label_data_examples`.
-
+If you hope to calculate the metrics such as weight-F1 score and accuracy, add the argument `--calculate` to
+the above command.
 ### Explanation Quality Evaluation
 The second evaluation metric for the IMHI benchmark is to evaluate the quality of the generated explanations.
 The results in our 

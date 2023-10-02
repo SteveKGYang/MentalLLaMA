@@ -93,9 +93,9 @@ def calculate_f1(generated, goldens, output_path):
 
         for ref, output in zip(golden, outputs):
             ref_an = ref.split("Reasoning:")[0]
-            #output_an = output.split("Reasoning:")[0]
+            output_an = output.split("Reasoning:")[0]
             #print(output)
-            output_an = str(output)[:70]
+            #output_an = str(output)[:70]
 
             if dataset_name == 'swmh':
                 if 'no mental' in output_an.lower():
