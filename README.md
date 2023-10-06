@@ -287,13 +287,11 @@ python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT
 If you use MentaLLaMA in your work, please cite our paper.
 
 ```
-@misc{yang2023mentalllama,
-      title={MentalLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models}, 
-      author={Kailai Yang and Tianlin Zhang and Ziyan Kuang and Qianqian Xie and Sophia Ananiadou},
-      year={2023},
-      eprint={2309.13567},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{yang2023mentalllama,
+  title={MentalLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models},
+  author={Yang, Kailai and Zhang, Tianlin and Kuang, Ziyan and Xie, Qianqian and Ananiadou, Sophia},
+  journal={arXiv preprint arXiv:2309.13567},
+  year={2023}
 }
 ```
 
