@@ -66,8 +66,8 @@ with large language models (LLMs). In early works we comprehensively evaluate th
 performances of the latest LLMs such as ChatGPT and GPT-4 on generating explanations
 for mental health analysis. Based on the findings, we build the Interpretable Mental Health Instruction (IMHI)
 dataset with 105K instruction samples, the first multi-task and multi-source instruction-tuning dataset for interpretable mental
-health analysis on social media. Based on the IMHI dataset, We propose MentalLLaMA, the first open-source instruction-following LLMs for interpretable mental
-health analysis. MentalLLaMA can perform mental health
+health analysis on social media. Based on the IMHI dataset, We propose MentaLLaMA, the first open-source instruction-following LLMs for interpretable mental
+health analysis. MentaLLaMA can perform mental health
 analysis on social media data and generate high-quality explanations for its predictions.
 We also introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples,
 which covers 8 tasks and 10 test sets. Our contributions are presented in these 2 papers:
