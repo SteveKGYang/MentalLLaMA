@@ -33,7 +33,7 @@
 
 ## News
 
-📢 *Oct. 9, 2023* Our evaluation paper: 
+📢 *Oct. 7, 2023* Our evaluation paper: 
 "Towards Interpretable Mental Health Analysis with Large Language Models" has been accepted 
 by EMNLP 2023 main conference as a long paper!
 
