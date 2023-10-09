@@ -31,6 +31,12 @@
 
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
+## News
+
+📢 *Oct. 9, 2023* Our evaluation paper: 
+"Towards Interpretable Mental Health Analysis with Large Language Models" has been accepted 
+by EMNLP 2023 main conference as a long paper!
+
 ## Ethical Considerations
 
 This repository and its contents are provided for **non-clinical research only**
