@@ -7,26 +7,28 @@
     <a href='https://stevekgyang.github.io/' target='_blank'>Kailai Yang<sup>1,2</sup>&emsp;
     <a href='https://www.zhangtianlin.top/' target='_blank'>Tianlin Zhang<sup>1,2</sup>&emsp;
     <a target='_blank'>Shaoxiong Ji<sup>3</sup></a>&emsp;
-    <a target='_blank'>Ziyan Kuang<sup>4</sup></a>&emsp;
     <a target='_blank'>Qianqian Xie<sup>1,2</sup></a>&emsp;
-    <a href='https://research.manchester.ac.uk/en/persons/sophia.ananiadou' target='_blank'>Sophia Ananiadou<sup>1,2</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang<sup>5</sup></a>
+    <a target='_blank'>Ziyan Kuang<sup>5</sup></a>&emsp;
+    <a href='https://research.manchester.ac.uk/en/persons/sophia.ananiadou' target='_blank'>Sophia Ananiadou<sup>1,2,4</sup></a>&emsp;
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang<sup>4</sup></a>
 </div>
 <div>
 <div align="left">
     <sup>1</sup>National Centre for Text Mining&emsp;
     <sup>2</sup>The University of Manchester&emsp;
     <sup>3</sup>University of Helsinki&emsp;
-    <sup>4</sup>Jiangxi Normal University&emsp;
+    <sup>4</sup>Artificial Intelligence Research Center, AIST&emsp;
     <sup>5</sup>Wuhan University&emsp;
+    <sup>6</sup>Jiangxi Normal University&emsp;
 </div>
 
 <div align="left">
     <img src='https://i.postimg.cc/Kj7RzvNr/nactem-hires.png' alt='NaCTeM' height='85px'>&emsp;
     <img src='https://i.postimg.cc/nc2Jy6FN/uom.png' alt='UoM University Logo' height='85px'>&emsp;
     <img src='https://i.postimg.cc/cJD3HsRY/helsinki.jpg' alt='helsinki Logo' height='85px'>&emsp;
-    <img src='https://i.postimg.cc/T3tjyqGp/Jiangxi.png' alt='helsinki Logo' height='85px'>
+    <img src='https://i.postimg.cc/SNpxVKwg/airc-logo.png' alt='airc Logo' height='85px'>&emsp;
     <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='85px'>
+    <img src='https://i.postimg.cc/T3tjyqGp/Jiangxi.png' alt='Jiangxi Logo' height='85px'>
 </div>
 
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
@@ -289,9 +291,20 @@ python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT
 
 
 ## Citation
+If you use the human annotations or analysis in the evaluation paper, please cite:
 
-If you use MentaLLaMA in your work, please cite our paper.
+```
+@misc{yang2023interpretable,
+      title={Towards Interpretable Mental Health Analysis with Large Language Models}, 
+      author={Kailai Yang and Shaoxiong Ji and Tianlin Zhang and Qianqian Xie and Ziyan Kuang and Sophia Ananiadou},
+      year={2023},
+      eprint={2304.03347},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
+If you use MentaLLaMA in your work, please cite:
 ```
 @article{yang2023mentalllama,
   title={MentalLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models},
