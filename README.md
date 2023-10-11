@@ -8,9 +8,9 @@
     <a href='https://www.zhangtianlin.top/' target='_blank'>Tianlin Zhang<sup>1,2</sup>&emsp;
     <a target='_blank'>Shaoxiong Ji<sup>3</sup></a>&emsp;
     <a target='_blank'>Qianqian Xie<sup>1,2</sup></a>&emsp;
-    <a target='_blank'>Ziyan Kuang<sup>5</sup></a>&emsp;
+    <a target='_blank'>Ziyan Kuang<sup>6</sup></a>&emsp;
     <a href='https://research.manchester.ac.uk/en/persons/sophia.ananiadou' target='_blank'>Sophia Ananiadou<sup>1,2,4</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang<sup>4</sup></a>
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang<sup>5</sup></a>
 </div>
 <div>
 <div align="left">
