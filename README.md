@@ -34,6 +34,8 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
 ## News
+📢 *Oct. 13, 2023* We release the training data for the following datasets: DR, dreaddit, SAD, 
+MultiWD, and IRF. More to come, stay tuned!
 
 📢 *Oct. 7, 2023* Our evaluation paper: 
 "Towards Interpretable Mental Health Analysis with Large Language Models" has been accepted 
