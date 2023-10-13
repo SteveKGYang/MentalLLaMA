@@ -133,26 +133,45 @@ Our running of these codes on MentaLLaMA-chat-13B gets the following response:
 Answer: This post shows the stress cause related to work. Reasoning: The post explicitly mentions work as being stressful and expresses a hope that it gets better. This indicates that the poster is experiencing stress in relation to their work, suggesting that work is the primary cause of their stress in this instance.
 ```
 
-## The IMHI Benchmark
-
-### Test data
-We introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples
-. We collect raw test data from 10 existing datasets covering 8 mental health analysis tasks, and transfer them into
+## The IMHI Dataset
+We collect raw data from 10 existing datasets covering 8 mental health analysis tasks, and transfer them into
 test data for interpretable mental health analysis. Statistic about the 10 test sets are as follows:
 
-| Name                                                   | Task                                  | Test samples | Data Source | Annotation        |
-|--------------------------------------------------------|---------------------------------------|--------------|-------------|-------------------|
-| [DR](https://aclanthology.org/W18-5903/)               | depression detection                  | 405          | Reddit      | Weak labels       |
-| [CLP](https://aclanthology.org/W15-1204/)              | depression detection                  | 299          | Reddit      | Human annotations |
-| [dreaddit](https://aclanthology.org/D19-6213/)         | stress detection                      | 414          | Reddit      | Human annotations |
-| [SWMH](https://arxiv.org/abs/2004.07601)               | mental disorders detection            | 10,882       | Reddit      | Weak labels       |
-| [T-SID](https://arxiv.org/abs/2004.07601)              | mental disorders detection            | 959          | Twitter     | Weak labels       |
-| [SAD](https://dl.acm.org/doi/10.1145/3411763.3451799)  | stress cause detection                | 684          | SMS         | Human annotations |
-| [CAMS](https://aclanthology.org/2022.lrec-1.686/)      | depression/suicide cause detection    | 625          | Reddit      | Human annotations |
-| loneliness                                             | loneliness detection                  | 531          | Reddit      | Human annotations |
-| [MultiWD](https://github.com/drmuskangarg/MultiWD)     | Wellness dimensions detection         | 2,441        | Reddit      | Human annotations |
-| [IRF](https://aclanthology.org/2023.findings-acl.757/) | Interpersonal risks factors detection | 2,113        | Reddit      | Human annotations |
+| Name                                                   | Task                                  | Data Split | Data Source | Annotation        | Released |
+|--------------------------------------------------------|---------------------------------------|------------|-------------|-------------------|----------|
+| [DR](https://aclanthology.org/W18-5903/)               | depression detection                  | 1,003/430/405        | Reddit      | Weak labels       | Yes      |
+| [CLP](https://aclanthology.org/W15-1204/)              | depression detection                  | 456/196/299        | Reddit      | Human annotations | Not yet  |
+| [dreaddit](https://aclanthology.org/D19-6213/)         | stress detection                      | 2,837/300/414        | Reddit      | Human annotations | Yes      |
+| [SWMH](https://arxiv.org/abs/2004.07601)               | mental disorders detection            | 34,822/8,705/10,882     | Reddit      | Weak labels       | Not yet  |
+| [T-SID](https://arxiv.org/abs/2004.07601)              | mental disorders detection            | 3,071/767/959        | Twitter     | Weak labels       | Not yet  |
+| [SAD](https://dl.acm.org/doi/10.1145/3411763.3451799)  | stress cause detection                | 5,547/616/684        | SMS         | Human annotations | Yes      |
+| [CAMS](https://aclanthology.org/2022.lrec-1.686/)      | depression/suicide cause detection    | 2,207/320/625        | Reddit      | Human annotations | Not yet  |
+| loneliness                                             | loneliness detection                  | 2,463/527/531        | Reddit      | Human annotations | Not yet  |
+| [MultiWD](https://github.com/drmuskangarg/MultiWD)     | Wellness dimensions detection         |  15,744/1,500/2,441      | Reddit      | Human annotations | Yes      |
+| [IRF](https://aclanthology.org/2023.findings-acl.757/) | Interpersonal risks factors detection | 3,943/985/2,113      | Reddit      | Human annotations | Yes      |
 
+### Training data
+We introduce IMHI, the first multi-task and multi-source instruction-tuning dataset for interpretable mental
+health analysis on social media.
+We currently release the training and evaluation data from the following sets: DR, dreaddit, SAD, MultiWD, and IRF. The instruction
+data is put under
+```
+/train_data/instruction_data
+```
+The items are easy to follow: the `query` row denotes the question, and the `gpt-3.5-turbo` row 
+denotes our modified and evaluated predictions and explanations from ChatGPT. `gpt-3.5-turbo` is used as
+the golden response for evaluation.
+
+To facilitate training on models with no instruction following ability, we also release part of the test data for 
+IMHI-completion. The data is put under
+```
+/train_data/complete_data
+```
+The file layouts are the same with instruction tuning data.
+
+### Evaluation Benchmark
+We introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples
+. 
 We currently release the test data from the following sets: DR, dreaddit, SAD, MultiWD, and IRF. The instruction
 data is put under
 ```
