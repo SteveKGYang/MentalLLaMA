@@ -34,6 +34,10 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
 ## News
+
+📢 *Oct. 31, 2023* We release the MentaLLaMA-33B-lora model, a 33B edition of MentaLLaMA based on 
+Vicuna-33B and the full IMHI dataset, but trained with LoRA due to the computational resources!
+
 📢 *Oct. 13, 2023* We release the training data for the following datasets: DR, dreaddit, SAD, 
 MultiWD, and IRF. More to come, stay tuned!
 
@@ -86,7 +90,13 @@ which covers 8 tasks and 10 test sets. Our contributions are presented in these 
 
 ## MentaLLaMA Model 
 
-We provide 4 model checkpoints evaluated in the MentaLLaMA paper:
+We provide 5 model checkpoints evaluated in the MentaLLaMA paper:
+
+- [MentaLLaMA-33B-lora](https://huggingface.co/klyang/MentaLLaMA-33B-lora): This model is fine-tuned based on the Vicuna-33B 
+foundation model and the full IMHI instruction tuning data. The training
+data covers 8 mental health analysis tasks. The model can follow instructions to make accurate mental health analysis
+and generate high-quality explanations for the predictions. Due to the limitation of computational resources,
+we train the MentaLLaMA-33B model with the PeFT technique LoRA, which significantly reduced memory usage.
 
 - [MentaLLaMA-chat-13B](https://huggingface.co/klyang/MentaLLaMA-chat-13B): This model is fine-tuned based on the Meta 
 LLaMA2-chat-13B foundation model and the full IMHI instruction tuning data. The training
@@ -107,7 +117,7 @@ follow instructions, but can make mental health analysis and generate explanatio
 The smaller size of this model allows faster inference and easier deployment.
 
 You can use the MentaLLaMA models in your Python project with the Hugging Face Transformers library. 
-Here is a simple example of how to load the model:
+Here is a simple example of how to load the fully fine-tuned model:
 
 ```python
 from transformers import LlamaTokenizer, LlamaForCausalLM
@@ -133,6 +143,35 @@ Our running of these codes on MentaLLaMA-chat-13B gets the following response:
 
 ```
 Answer: This post shows the stress cause related to work. Reasoning: The post explicitly mentions work as being stressful and expresses a hope that it gets better. This indicates that the poster is experiencing stress in relation to their work, suggesting that work is the primary cause of their stress in this instance.
+```
+
+For the MentaLLaMA-33B-lora model, since our model is based on the Vicuna-33B foundation model, you need to first download the Vicuna-33B model [here](https://huggingface.co/lmsys/vicuna-33b-v1.3), 
+and put it under the `./vicuna-33B` dir. Then download the MentaLLaMA-33B-lora weights and put it under the `./MentaLLaMA-33B-lora` dir.
+
+```python
+from peft import AutoPeftModelForCausalLM
+from transformers import AutoTokenizer
+peft_model = AutoPeftModelForCausalLM.from_pretrained("./MentaLLaMA-33B-lora")
+tokenizer = AutoTokenizer.from_pretrained('./MentaLLaMA-33B-lora')
+```
+
+After loading the models, you can generate a response. Here is an example:
+
+```python
+input_data = ["Consider this post: I'm finally dead inside and I don't know how to feel about it Fear, Anger, Sadness... It's all gone. I just feel numb. Question: Does the poster suffer from depression?"]
+
+inputs = tokenizer(input_data, return_tensors="pt", padding=True)
+input_ids = inputs.input_ids
+
+generate_ids = peft_model.generate(**inputs, max_length=2048)
+
+truc_ids = generate_ids[0][len(input_ids[0]) :]
+response = tokenizer.decode(truc_ids, skip_special_tokens=True, spaces_between_special_tokens=False)
+```
+
+Our running of these codes on MentaLLaMA-33B-lora gets the following response:
+```
+Reasoning: Yes, the poster suffers from depression. Reasoning: The poster's statement expresses a sense of emotional numbness and a lack of emotional response. This is a common symptom of depression, as individuals with depression often experience a diminished ability to feel emotions. The poster also mentions feeling dead inside, which further suggests a lack of emotional connection and a sense of hopelessness, both of which are common in depression. Overall, the language used and the description of emotional numbness align with symptoms commonly associated with depression.
 ```
 
 ## The IMHI Dataset
