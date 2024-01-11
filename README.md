@@ -103,7 +103,8 @@ LLaMA2-chat-13B foundation model and the full IMHI instruction tuning data. The 
 data covers 8 mental health analysis tasks. The model can follow instructions to make accurate mental health analysis
 and generate high-quality explanations for the predictions. Due to the model size, the inference
 are relatively slow.
-- [MentaLLaMA-chat-7B](https://huggingface.co/klyang/MentaLLaMA-chat-7B): This model is fine-tuned based on the Meta 
+- [MentaLLaMA-chat-7B](https://huggingface.co/klyang/MentaLLaMA-chat-7B)|
+[MentaLLaMA-chat-7B-hf](https://huggingface.co/klyang/MentaLLaMA-chat-7B-hf): This model is fine-tuned based on the Meta 
 LLaMA2-chat-7B foundation model and the full IMHI instruction tuning data. The training
 data covers 8 mental health analysis tasks. The model can follow instructions to make mental health analysis
 and generate explanations for the predictions.
