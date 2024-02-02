@@ -34,6 +34,9 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
 ## News
+📢 *Feb. 1, 2024* Our MentaLLaMA paper: 
+"MentaLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models" has been accepted 
+by WWW 2024!
 
 📢 *Oct. 31, 2023* We release the MentaLLaMA-33B-lora model, a 33B edition of MentaLLaMA based on 
 Vicuna-33B and the full IMHI dataset, but trained with LoRA due to the computational resources!
@@ -355,13 +358,12 @@ python IMHI.py --model_path MODEL_PATH --batch_size 8 --model_output_path OUTPUT
 If you use the human annotations or analysis in the evaluation paper, please cite:
 
 ```
-@misc{yang2023interpretable,
-      title={Towards Interpretable Mental Health Analysis with Large Language Models}, 
-      author={Kailai Yang and Shaoxiong Ji and Tianlin Zhang and Qianqian Xie and Ziyan Kuang and Sophia Ananiadou},
-      year={2023},
-      eprint={2304.03347},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{yang2023towards,
+  title={Towards interpretable mental health analysis with large language models},
+  author={Yang, Kailai and Ji, Shaoxiong and Zhang, Tianlin and Xie, Qianqian and Kuang, Ziyan and Ananiadou, Sophia},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={6056--6077},
+  year={2023}
 }
 ```
 
