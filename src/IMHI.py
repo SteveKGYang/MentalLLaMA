@@ -4,6 +4,7 @@ import pandas as pd
 
 import torch
 from transformers import AutoModel, AutoTokenizer, LlamaForCausalLM, LlamaTokenizer
+from peft import PeftModel
 
 from sklearn.metrics import f1_score, confusion_matrix, accuracy_score, classification_report, \
     precision_recall_fscore_support, precision_score, recall_score
@@ -252,13 +253,17 @@ def calculate_f1(generated, goldens, output_path):
             f.write(result)
         print(count)
 
-def main(model_path: str, model_output_path: str, batch_size: int, test_dataset: str, rule_calculate: bool, llama: bool, device: str, cuda: bool):
+def main(model_path: str, model_output_path: str, batch_size: int, test_dataset: str, rule_calculate: bool,
+         llama: bool, device: str, lora: bool, cuda: bool, lora_path: str):
     if llama:
         model = LlamaForCausalLM.from_pretrained(model_path)
         tokenizer = LlamaTokenizer.from_pretrained(model_path, padding_side='left')
     else:
         model = AutoModel.from_pretrained(model_path)
         tokenizer = AutoTokenizer.from_pretrained(model_path)
+
+    if lora:
+        model = PeftModel.from_pretrained(model, lora_path)
 
     tokenizer.pad_token = tokenizer.unk_token
 
@@ -285,6 +290,8 @@ if __name__ == "__main__":
     parser.add_argument('--test_dataset', type=str, choices=['IMHI', 'IMHI-completion', 'expert'])
     parser.add_argument('--rule_calculate', action='store_true')
     parser.add_argument('--llama', action='store_true')
+    parser.add_argument('--lora', action='store_true')
+    parser.add_argument('--lora_path', type=str)
 
     args = parser.parse_args()
     args = vars(args)

@@ -28,12 +28,13 @@
     <img src='https://i.postimg.cc/cJD3HsRY/helsinki.jpg' alt='helsinki Logo' height='85px'>&emsp;
     <img src='https://i.postimg.cc/SNpxVKwg/airc-logo.png' alt='airc Logo' height='85px'>&emsp;
     <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='85px'>
-    <img src='https://i.postimg.cc/T3tjyqGp/Jiangxi.png' alt='Jiangxi Logo' height='85px'>
 </div>
 
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
 ## News
+📢 *Mar. 2, 2024* Full release of the test data for the IMHI benchmark.
+
 📢 *Feb. 1, 2024* Our MentaLLaMA paper: 
 "MentaLLaMA: Interpretable Mental Health Analysis on Social Media with Large Language Models" has been accepted 
 by WWW 2024!
@@ -216,8 +217,7 @@ The file layouts are the same with instruction tuning data.
 
 ### Evaluation Benchmark
 We introduce the first holistic evaluation benchmark for interpretable mental health analysis with 19K test samples
-. 
-We currently release the test data from the following sets: DR, dreaddit, SAD, MultiWD, and IRF. The instruction
+. All test data have been released. The instruction
 data is put under
 ```
 /test_data/test_instruction
