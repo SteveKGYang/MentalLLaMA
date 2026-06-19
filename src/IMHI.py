@@ -43,7 +43,7 @@ def generate_response(model, tokenizer, test_data, device, batch_size):
     generated_text = {}
     goldens = {}
 
-    model.to(device)
+    #model.to(device)
 
     for dataset_name in test_data.keys():
         #if dataset_name not in ['DR', 'dreaddit']:
